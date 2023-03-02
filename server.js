@@ -24,8 +24,12 @@ app.get('/api/notes', (req, res) => {
     })
 })
 
-// add post /api/notes
+// POST /api/notes should receive a new note to save on the request body, add it to the db.json file, and then return the new note to the client. You'll need to find a way to give each note a unique id when it's saved (look into npm packages that could do this for you).
 
+// add post /api/notes
+app.post('./api/notes', (req, res) =>{
+     
+})
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, "./public/index.html"))
@@ -35,16 +39,3 @@ app.listen(PORT, () => {
     console.log("Running  on PORT http://localhost:" + PORT)
 
 })
-
-// app.get('./api/notes', function(req, res){
-//     readFile('./db/db.json','utf8').then(function(data){
-//         notes= []/concat(json.parse(data))
-//         res.json(notes)
-//     }) 
-// })
-// app.pot('api/notes', function(req,res){
-// const note = req.body
-// fs.readFile('./db/db.json', 'utf8').then(function(data){
-
-// })
-// })
